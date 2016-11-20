@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: sensor
+  host: iotech
+  disk_quota: 1024M
+  services:
+  - sensor-cloudantNoSQLDB
+  - sensor-iotf-service
+  - availability-monitoring-auto
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
